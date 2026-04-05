@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { questions } from '../data/questions'
 import { DifficultyBadge } from '../components/DifficultyBadge'
 import { HintsSection } from '../components/HintsSection'
@@ -12,6 +12,16 @@ export function QuestionPage() {
   const QuestionComponent = questionId ? questionComponents[questionId] : undefined
   const { completed, toggleComplete } = useCompletion()
   const isDone = questionId ? completed.has(questionId) : false
+  const navigate = useNavigate()
+
+  const handleMarkDone = () => {
+    if (!isDone) {
+      toggleComplete(question!.id)
+      navigate('/')
+    } else {
+      toggleComplete(question!.id)
+    }
+  }
 
   if (!question) {
     return (
@@ -28,7 +38,7 @@ export function QuestionPage() {
         <Link to="/" className="back-link">&larr; All Questions</Link>
         <button
           className={`done-toggle${isDone ? ' done-toggle--active' : ''}`}
-          onClick={() => toggleComplete(question.id)}
+          onClick={handleMarkDone}
         >
           {isDone ? 'Completed' : 'Mark as Done'}
         </button>
