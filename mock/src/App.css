@@ -1,0 +1,263 @@
+/* ─── Layout ──────────────────────────────────────────── */
+
+.home-page,
+.question-page,
+.not-found {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ─── Home ────────────────────────────────────────────── */
+
+.home-header {
+  margin-bottom: 2rem;
+}
+
+.home-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.home-header p {
+  margin: 0;
+  color: #888;
+}
+
+.question-section {
+  margin-bottom: 2rem;
+}
+
+.question-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ─── Question Card ───────────────────────────────────── */
+
+.question-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.question-card:hover {
+  border-color: #646cff;
+  transform: translateY(-2px);
+}
+
+.question-card--done {
+  border-color: #22c55e40;
+  opacity: 0.7;
+}
+
+.question-card--done h3 {
+  text-decoration: line-through;
+  text-decoration-color: #22c55e80;
+}
+
+.done-badge {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: #22c55e30;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.question-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.question-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+/* ─── Badge & Tags ────────────────────────────────────── */
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.time-limit {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.focus-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.focus-tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: #2a2a3a;
+  color: #aaa;
+}
+
+/* ─── Question Page ───────────────────────────────────── */
+
+.question-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.back-link {
+  color: #646cff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.done-toggle {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+}
+
+.done-toggle:hover {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.done-toggle--active {
+  background: #22c55e20;
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.question-header {
+  margin-bottom: 1.5rem;
+}
+
+.question-header h1 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.question-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.question-prompt,
+.question-requirements,
+.hints-section,
+.evaluation-section,
+.workspace-section {
+  margin-bottom: 1.5rem;
+}
+
+.question-prompt h2,
+.question-requirements h2,
+.workspace-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.question-prompt p {
+  line-height: 1.6;
+}
+
+.question-requirements ul,
+.hints-section ul,
+.evaluation-section ul {
+  padding-left: 1.25rem;
+  line-height: 1.7;
+}
+
+/* ─── Hints & Evaluation (collapsible) ────────────────── */
+
+.hints-section,
+.evaluation-section {
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.hints-section summary,
+.evaluation-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+.hints-section[open] summary,
+.evaluation-section[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+/* ─── Workspace ───────────────────────────────────────── */
+
+.workspace {
+  border: 2px dashed #333;
+  border-radius: 8px;
+  padding: 2rem;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workspace-placeholder {
+  color: #666;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.workspace-placeholder code {
+  background: #2a2a3a;
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+/* ─── Not Found ───────────────────────────────────────── */
+
+.not-found {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.not-found a {
+  color: #646cff;
+}
